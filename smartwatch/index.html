@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidPay - Smartwatch App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="smartwatch">
+        <div id="home-screen" class="screen">
+           <div class="content">
+            <div class="balance">
+                <p>Balance</p>
+                <h1 id="balance">₹500</h1>    
+            </div>
+
+            <div class="lastpay" >
+                <p >Last Payment</p>
+                <h2 id="last-payment">Toy Store</h2>
+            </div>
+           </div>
+            
+            <button class="button" onclick="showShopList()">Pay</button>
+        </div>
+
+        <div id="shop-list-screen" class="screen hidden">
+            <button class="back-button" onclick="goBackToHome()">←</button>
+            <h3>Select a Shop</h3>
+            <div class="shop-list">
+                <div class="shop-item" onclick="selectShop('Book Store')">Book Store</div>
+                <div class="shop-item" onclick="selectShop('Grocery Store')">Grocery Store</div>
+                <div class="shop-item" onclick="selectShop('Toy Store')">Toy Store</div>
+                <div class="shop-item" onclick="selectShop('Stationery Shop')">Stationery Shop</div>
+                <div class="shop-item" onclick="selectShop('Snack Corner')">Snack Corner</div>
+            </div>
+        </div>
+
+        <div id="payment-screen" class="screen hidden">
+            <button class="back-button" onclick="showShopList()">←</button>
+            <h3 id="selected-shop">Payment</h3>
+            <input type="number" id="amount" placeholder="Enter amount">
+            <button class="button" onclick="makePayment()">Pay</button>
+        </div>
+    </div>
+
+    <script>
+        const homeScreen = document.getElementById('home-screen');
+        const shopListScreen = document.getElementById('shop-list-screen');
+        const paymentScreen = document.getElementById('payment-screen');
+        const selectedShop = document.getElementById('selected-shop');
+        const balanceElement = document.getElementById('balance');
+        const lastPaymentElement = document.getElementById('last-payment');
+        
+        let balance = 500; 
+        let lastPayment = 'None';
+        
+
+        function showShopList() {
+            homeScreen.classList.add('hidden');
+            shopListScreen.classList.remove('hidden');
+        }
+
+        function selectShop(shopName) {
+            shopListScreen.classList.add('hidden');
+            paymentScreen.classList.remove('hidden');
+            selectedShop.textContent = `Pay to: ${shopName}`;
+            
+        }
+        function goBackToHome() {
+            shopListScreen.classList.add('hidden');
+            paymentScreen.classList.add('hidden');
+            homeScreen.classList.remove('hidden');
+        }
+
+        function makePayment() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const shopName = selectedShop.textContent.replace('Pay to: ', '');
+
+            if (amount > 0 && amount <= balance) {
+                balance -= amount;
+                balanceElement.textContent = `₹${balance}`;
+                lastPayment = `${shopName} - ₹${amount}`;
+                lastPaymentElement.textContent = lastPayment;
+                
+
+                goBackToHome();
+            } else {
+                alert('Invalid amount or insufficient balance.');
+            }
+        }
+    </script>
+</body>
+</html>
