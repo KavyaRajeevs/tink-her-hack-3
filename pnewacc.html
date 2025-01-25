@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+
+    <!-- CSS Styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1c1c28, #2b2b3c);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .create-container {
+            background-color: #232222;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #7b5cff; /* Vibrant Accent Color */
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #7b5cff; /* Vibrant Accent Color */
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #fff; 
+            background-color: #f9f9f9; 
+            color: #333;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        button {
+            background: linear-gradient(135deg, #7b5cff, #6245ff);
+            color: white;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 8px 15px rgba(123, 92, 255, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(123, 92, 255, 0.5);
+        }
+
+        .back-to-login {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-to-login a {
+            color: #7b5cff;
+            text-decoration: none;
+        }
+
+        .back-to-login a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Create Account Form -->
+    <div class="create-container">
+        <h2>Create your KidPay account here!</h2>
+        <form id="createForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="pin">PIN</label>
+                <input type="password" id="pin" name="pin" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-pin">Confirm PIN</label>
+                <input type="password" id="confirm-pin" name="confirm-pin" required>
+            </div>
+            <button type="submit" class="create-btn">Create Account</button>
+        </form>
+        <div class="back-to-login">
+            <p>Already have an account? <a href="plogin.html">Back to Login</a></p>
+        </div>
+    </div>
+
+    <!-- JavaScript for Form Validation -->
+    <script>
+        document.getElementById('createForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const pin = document.getElementById('pin').value;
+            const confirmPin = document.getElementById('confirm-pin').value;
+
+            if (!username || !email || !pin || !confirmPin) {
+                alert("Please fill in all fields.");
+            } else if (pin !== confirmPin) {
+                alert("PINs do not match. Please try again.");
+            } else {
+                alert("Account created successfully!");
+                // Redirect to login page or perform any other desired action
+            }
+        });
+    </script>
+
+</body>
+</html>

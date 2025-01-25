@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1c1c28, #2b2b3c);
+            color: #fff;
+            position: relative;
+        }
+
+        header {
+            background: #0f3a67;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .back-arrow {
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #7b5cff;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 20px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1 {
+            margin-top: auto;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #7b5cff;
+        }
+
+        .notification-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .notification-item {
+            background: #232222;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .notification-item:hover {
+            background-color: #2c2c3d;
+        }
+
+        .notification-title {
+            font-weight: bold;
+            color: #FFA500;
+        }
+
+        .notification-time {
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        .no-notifications {
+            text-align: center;
+            font-size: 1.2em;
+            color: #888;
+            margin-top: 20px;
+            padding: 120px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0f3a67;
+            color: white;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="back-arrow" onclick="goBack()">←</div>
+        <div class="logo">KidPay</div>
+        <div class="header-icons">
+            <div class="profile" onclick="showProfile()">👤</div>
+        </div>
+    </header>
+    <main>
+        <h1>Notifications</h1>
+        <ul class="notification-list" id="notificationList">
+            <!-- Notifications will be dynamically inserted here -->
+        </ul>
+        <div class="no-notifications" id="noNotificationsMessage" style="display: none;">
+            No notifications available.
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 KidPay. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const notificationList = document.getElementById('notificationList');
+        const noNotificationsMessage = document.getElementById('noNotificationsMessage');
+
+        // Simulated backend notifications array (empty for demonstration)
+        const notifications = []; // Empty array means no notifications
+
+        // Function to render notifications dynamically
+        function renderNotifications() {
+            notificationList.innerHTML = ''; // Clear existing notifications
+
+            if (notifications.length === 0) {
+                // Show "No notifications" message when list is empty
+                noNotificationsMessage.style.display = 'block';
+            } else {
+                // Hide "No notifications" message and show notifications
+                noNotificationsMessage.style.display = 'none';
+
+                notifications.forEach(notification => {
+                    const li = document.createElement('li');
+                    li.className = 'notification-item';
+                    li.innerHTML = `
+                        <div class="notification-title">${notification.title}</div>
+                        <div class="notification-time">${notification.time}</div>
+                    `;
+                    notificationList.appendChild(li);
+                });
+            }
+        }
+
+        // Call renderNotifications on page load
+        renderNotifications();
+
+        // Go Back Function
+        function goBack() {
+            window.history.back();  
+            // Implement the logic to navigate back
+        }
+
+        // Show Profile Function
+        function showProfile() {
+            alert("Showing profile...");
+            // Implement the logic to show profile
+        }
+    </script>
+</body>
+</html>
