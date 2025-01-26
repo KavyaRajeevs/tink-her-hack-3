@@ -25,8 +25,8 @@ Our solution is a **digital wallet tailored for children**, managed seamlessly b
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
+- HTML, CSS, JavaScript, Python
+- Flask
 - [Libraries used]
 - [Tools used]
 
