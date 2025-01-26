@@ -27,13 +27,11 @@ Our solution is a **digital wallet tailored for children**, managed seamlessly b
 For Software:
 - HTML, CSS, JavaScript, Python
 - Flask
-- [Libraries used]
-- [Tools used]
+- VSCode
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- Smart Watch
+
 
 ### Implementation
 For Software:
@@ -47,14 +45,29 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+## smartwatch Display
+![Initial smartwatch dispay](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/smartwatch.png)
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+*KidPay main page on smartwatch shows the current balance amount and the last done payment details*
+
+![Store list](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/store-list.png)
+
+*List of stores approved by parents*
+
+![Payment page](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/payment.png)
+
+*Child provides amount to pay and can easily complete payment either by pin or through biometrics*
+
+![Smartwatch after payment](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/after-pay.png)
+
+*smartwatch main display updated with new balance and updated last payment details*
+
+## KidPay Dashboard
+![Initial smartwatch dispay](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/smartwatch.png)
+
+*KidPay main page on smartwatch shows the current balance amount and the last done payment details*
+
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
@@ -63,8 +76,7 @@ For Software:
 For Hardware:
 
 # Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+
 
 ![Schematic](Add your schematic diagram here)
 *Add caption explaining the schematic*
@@ -90,10 +102,7 @@ For Hardware:
 # Additional Demos
 [Add any extra demo materials/links]
 
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+
 
 ---
 Made with ❤️ at TinkerHub
