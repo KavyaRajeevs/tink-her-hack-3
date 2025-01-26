@@ -32,19 +32,7 @@ For Software:
 For Hardware:
 - Smart Watch
 
-
-### Implementation
-For Software:
-# Installation
-[commands]
-
-# Run
-[commands]
-
-### Project Documentation
-For Software:
-
-# Screenshots (Add at least 3)
+# Screenshots 
 
 ## smartwatch Display
 ![Initial smartwatch dispay](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/smartwatch.png)
@@ -64,43 +52,31 @@ For Software:
 *smartwatch main display updated with new balance and updated last payment details*
 
 ## KidPay Dashboard
-![Initial smartwatch dispay](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/smartwatch.png)
+![Home Page](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/Screenshot%202025-01-26%20100048.png)
 
-*KidPay main page on smartwatch shows the current balance amount and the last done payment details*
+*KidPay Home page*
+
+![Adding Sub Users](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/Screenshot%202025-01-26%20100144.png)
+
+*Adding Sub Users Page*
+
+![Purchase Tracking](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/Screenshot%202025-01-26%20100115.png)
+
+*Purchase Tracking*
 
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
 
-For Hardware:
+![Kiosk](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/Diagrams/KidPay%20-%20visual%20selection.png)
 
-# Schematic & Circuit
+![Relevance](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/Diagrams/_-%20visual%20selection.png)
 
+![Mechanism](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/Diagrams/_-%20visual%20selection%20(1).png)
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
 
 # Build Photos
-![Team](Add photo of your team here)
+![EmpowerNest](https://github.com/KavyaRajeevs/tink-her-hack-3/blob/main/demo/KidPay-demo/Team.jpeg)
 
-
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
 
 
 
