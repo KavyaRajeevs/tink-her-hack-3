@@ -105,6 +105,44 @@ def sub_user_login():
             return jsonify({"message": "Invalid sub-user password!"}), 403
     else:
         return jsonify({"message": "Sub-user does not exist!"}), 404
+# Configure the database URI (SQLite in this case)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shop_owner.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+
+# Define the ShopOwner model to store shop details
+class ShopOwner(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    shop_name = db.Column(db.String(100), nullable=False)
+    upi_id = db.Column(db.String(100), nullable=False)
+
+    def __repr__(self):
+        return f'<ShopOwner {self.shop_name}>'
+
+# Route to register a shop owner
+@app.route('/register', methods=['GET', 'POST'])
+def register_shop():
+    if request.method == 'POST':
+        shop_name = request.form['shop_name']
+        upi_id = request.form['upi_id']
+
+        # Create a new ShopOwner object
+        new_shop_owner = ShopOwner(shop_name=shop_name, upi_id=upi_id)
+
+        # Add the new shop owner to the database
+        db.session.add(new_shop_owner)
+        db.session.commit()
+
+        return redirect(url_for('view_shops'))
+
+    return render_template('register_shop.html')
+
+# Route to view the list of registered shops
+@app.route('/shops')
+def view_shops():
+    shops = ShopOwner.query.all()
+    return render_template('view_shops.html', shops=shops)
+
 
 
 if __name__ == "__main__":
