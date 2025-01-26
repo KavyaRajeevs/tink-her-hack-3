@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Digital Wallet</title>
+    <title>Choose User</title>
     <style>
         body {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -23,17 +23,22 @@
             position: relative;
         }
 
+        .back-arrow {
+            font-size: 20px;
+            cursor: pointer;
+            color: #7b5cff;
+            margin-right: 15px;
+        }
+
         .logo {
             font-size: 24px;
             font-weight: bold;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            flex-grow: 1;
+            text-align: center;
             color: #7b5cff;
         }
 
         .header-icons {
-            margin-left: auto;
             display: flex;
             gap: 20px;
             font-size: 20px;
@@ -42,45 +47,44 @@
         .header-icons a {
             color: #7b5cff;
             text-decoration: none;
+            cursor: pointer;
         }
 
         main {
-            padding: 100px 20px;
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: auto;
             text-align: center;
         }
 
         h1 {
-            margin-bottom: 30px;
-            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
             color: #7b5cff;
         }
 
-        .button-container {
+        .user-list {
             display: flex;
-            text-decoration: none;
-            justify-content: center;
-            gap: 30px;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
 
-        button {
-            padding: 15px 30px;
-            font-size: 16px;
-            text-decoration: none;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            cursor: pointer;
-            border: none;
+        .user-card {
+            background: #2b2b3c;
+            padding: 20px;
             border-radius: 10px;
-            background: linear-gradient(135deg, #7b5cff, #6245ff);
-            color: white;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
             transition: transform 0.2s, box-shadow 0.3s;
-            box-shadow: 0 8px 15px rgba(123, 92, 255, 0.3);
         }
 
-        button:hover {
+        .user-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 20px rgba(123, 92, 255, 0.5);
-            text-decoration: none;
+            background: rgba(123, 92, 255, 0.2);
         }
 
         footer {
@@ -93,29 +97,21 @@
             bottom: 0;
             margin-top: 40px;
         }
-
-        @media (max-width: 600px) {
-            .button-container {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">KidPay</div>
+        <div class="back-arrow" onclick="goBack()">←</div>
+        <div class="logo">Track User</div>
         <div class="header-icons">
-            <div class="notification"><a href="notification.html">🔔</a></div>
-            <div class="profile"><a href="pprofile.html">👤</a></div>
+            <a href="notification.html">🔔</a>
+            <a href="pprofile.html">👤</a>
         </div>
     </header>
     <main>
-        <h1>Welcome to Your Kid's Digital Wallet</h1>
-        <div class="button-container">
-            <button onclick="addSubuser()"><a href="adduser.html" class="button">Add Subusers</a></button>
-            <button onclick="trackSubusers()"><a href ="trackuser.html" class="button">Track Subusers</a></button>
-            <button onclick="makePayment()"><a href ="payuser.html">Make Payments</a></button>
+        <h1>Select the User you want to track</h1>
+        <div class="user-list" id="userList">
+            <!-- User cards will be injected here -->
         </div>
     </main>
     <footer>
@@ -123,9 +119,27 @@
     </footer>
 
     <script>
-        function makePayment() {
-            alert("Redirecting to Make Payments page...");
-            // Here you can implement the logic to make payments
+        // Sample data, replace this with actual backend data
+        const users = [
+            { id: 1, name: "User1" },
+            { id: 2, name: "User2" },
+            { id: 3, name: "User3" },
+            { id: 4, name: "User4" }
+        ];
+
+        const userList = document.getElementById('userList');
+
+        // Dynamically create user cards
+        users.forEach(user => {
+            const userCard = document.createElement('div');
+            userCard.className = 'user-card';
+            userCard.textContent = user.name;
+            userCard.onclick = () => alert(`Redirecting to details for ${user.name}`);
+            userList.appendChild(userCard);
+        });
+
+        function goBack() {
+            window.history.back();
         }
     </script>
 </body>
