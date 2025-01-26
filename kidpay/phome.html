@@ -94,6 +94,12 @@
             margin-top: 40px;
         }
 
+        a:-webkit-any-link {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+        }
+
         @media (max-width: 600px) {
             .button-container {
                 flex-direction: column;
@@ -114,7 +120,7 @@
         <h1>Welcome to Your Kid's Digital Wallet</h1>
         <div class="button-container">
             <button onclick="addSubuser()"><a href="adduser.html" class="button">Add Subusers</a></button>
-            <button onclick="trackSubusers()"><a href ="trackuser.html" class="button">Track Subusers</a></button>
+            <button onclick="trackSubusers()"><a href ="usertrackselect.html" class="button">Track Subusers</a></button>
             <button onclick="makePayment()"><a href ="payuser.html">Make Payments</a></button>
         </div>
     </main>
