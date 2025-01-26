@@ -27,13 +27,11 @@ Our solution is a **digital wallet tailored for children**, managed seamlessly b
 For Software:
 - HTML, CSS, JavaScript, Python
 - Flask
-- [Libraries used]
-- [Tools used]
+- VSCode
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- Smart Watch
+
 
 ### Implementation
 For Software:
@@ -63,8 +61,7 @@ For Software:
 For Hardware:
 
 # Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+
 
 ![Schematic](Add your schematic diagram here)
 *Add caption explaining the schematic*
@@ -90,10 +87,7 @@ For Hardware:
 # Additional Demos
 [Add any extra demo materials/links]
 
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+
 
 ---
 Made with ❤️ at TinkerHub
