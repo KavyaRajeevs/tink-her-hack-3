@@ -6,7 +6,7 @@
     <title>Profile Page</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #1c1c28, #2b2b3c);
@@ -20,16 +20,21 @@
             display: flex;
             align-items: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            position: relative;
+        }
+
+        .back-arrow {
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 15px;
+            color: #7b5cff;
         }
 
         .logo {
             font-size: 24px;
             font-weight: bold;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
             color: #7b5cff;
+            margin: auto;
+            position: relative;
         }
 
         main {
@@ -48,13 +53,11 @@
             background: #2b2b3c;
             padding: 30px;
             border-radius: 10px;
-            position: relative;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
         .form-group {
             margin-bottom: 20px;
-            position: relative;
         }
 
         label {
@@ -107,6 +110,7 @@
 </head>
 <body>
     <header>
+        <div class="back-arrow" onclick="goBack()">←</div>
         <div class="logo">Profile</div>
     </header>
     <main>
@@ -153,5 +157,15 @@
             <button type="submit">Update Profile</button>
         </form>
     </main>
+
+    <script>
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back(); // Go back to the previous page
+            } else {
+                window.location.href = 'phome.html'; // Redirect to fallback page
+            }
+        }
+    </script>
 </body>
 </html>

@@ -1,1 +1,178 @@
-gi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Sub-User</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #7b5cff, #1d3557);
+            color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .back-arrow {
+            cursor: pointer;
+            font-size: 20px;
+            color: #f4f4f9;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-icons a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 20px;
+        }
+
+        .header-icons a:hover {
+            color: #7b5cff;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #ffffff;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #d3d3d3;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            font-size: 1rem;
+            border: 1px solid #555;
+            border-radius: 6px;
+            background-color: #333;
+            color: #f4f4f9;
+        }
+
+        input::placeholder {
+            color: #aaa;
+        }
+
+        button {
+            background: linear-gradient(135deg, #7b5cff, #2c3e50);
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #2c3e50, #7b5cff);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="back-arrow" onclick="goBack()">←</div>
+        <div class="logo">KidPay</div>
+        <div class="header-icons">
+            <a href="notification.html">🔔</a>
+            <a href="pprofile.html">👤</a>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Add Sub-User</h1>
+        <form id="addSubUserForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter full name" required>
+
+            <label for="relation">Relation:</label>
+            <input type="text" id="relation" name="relation" placeholder="Enter relation" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email address" required>
+
+            <label for="bank">Bank Name:</label>
+            <input type="text" id="bank" name="bank" required>
+
+            <label for="branch">Branch Name:</label>
+            <input type="text" id="branch" name="branch" required>
+
+            <label for="ifsc">IFSC Code:</label>
+            <input type="text" id="ifsc" name="ifsc" required>
+
+            <button type="button" class="otp-btn" id="generateOtp">Generate PIN</button>
+            <label for="pin">PIN:</label>
+            <input type="text" id="pin" name="pin" readonly>
+
+            <button type="submit">Add Sub-User</button>
+        </form>
+    </div>
+
+    <script>
+        // OTP generation function
+        function generateOTP() {
+            const otp = Math.floor(100000 + Math.random() * 900000); // generates a 6-digit OTP
+            return otp;
+        }
+
+        // Event listener for OTP generation
+        document.getElementById('generateOtp').addEventListener('click', function () {
+            const otp = generateOTP();
+            document.getElementById('pin').value = otp; // Display the generated OTP in the input field
+            alert('PIN Generated: ' + otp); // Optional: Notify the user
+        });
+        function goBack() {
+        // Check if there is a previous page in the history
+        if (window.history.length > 1) {
+            window.history.back(); // Navigate back
+        } else {
+            // Fallback to homepage or default page
+            window.location.href = 'phome.html'; 
+        }
+    }
+    </script>
+</body>
+</html>
